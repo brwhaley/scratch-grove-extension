@@ -1,15 +1,23 @@
 #!/bin/bash
-echo "🔧 Installing dependencies..."
+echo "🔧 Installing dependencies and setting up virtual environment..."
 
 # Update system
 sudo apt update && sudo apt upgrade -y
 
-# Install Python & dependencies
-sudo apt install -y python3 python3-pip git
+# Install required system packages
+sudo apt install -y python3 python3-pip python3-venv git
 
-# Install WebSockets and Grove library
-pip3 install websockets
+# Set up virtual environment
+cd ~/scratch-grove-extension
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependencies inside venv
+pip install websockets
 git clone https://github.com/Seeed-Studio/grove.py.git
-cd grove.py && sudo pip3 install .
+cd grove.py && pip install .
 
-echo "✅ Installation complete! Now run: python3 src/websocket-server/server.py"
+echo "✅ Setup complete!"
+echo "🔹 To run the WebSocket server, activate the virtual environment first:"
+echo "    source ~/scratch-grove-extension/venv/bin/activate"
+echo "    python3 src/websocket-server/server.py"
