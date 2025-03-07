@@ -27,7 +27,7 @@ scratch-grove-extension/
 To set up the project, clone the repository and run the setup script:
 ```sh
 cd ~
-git clone https://github.com/YOUR_GITHUB_USERNAME/scratch-grove-extension.git
+git clone https://github.com/brwhaley/scratch-grove-extension.git
 cd scratch-grove-extension
 bash scripts/setup.sh
 ```
