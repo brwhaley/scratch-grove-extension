@@ -9,7 +9,7 @@
         }
 
         connectWebSocket() {
-            const raspberryPiIP = "ws://10.0.0.198:8765";
+            const raspberryPiIP = "ws://localhost:8765";
             this.socket = new WebSocket(raspberryPiIP);
 
             this.socket.onopen = () => {
