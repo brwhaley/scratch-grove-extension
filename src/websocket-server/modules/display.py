@@ -6,7 +6,7 @@ from grove.grove_4_digit_display import Grove4DigitDisplay
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 
 CLK_PIN = 5
-DIO_PIN = 4
+DIO_PIN = 6
 display = Grove4DigitDisplay(CLK_PIN, DIO_PIN)
 
 async def handle_4_digit_display(message, websocket):
