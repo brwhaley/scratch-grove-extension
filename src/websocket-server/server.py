@@ -3,7 +3,7 @@ import json
 import websockets
 from modules import display
 
-async def handle_client(websocket, path):
+async def handle_client(websocket):
     async for message in websocket:
         data = json.loads(message)
         action = data.get("action")
